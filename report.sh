@@ -9,3 +9,5 @@ pandoc OSCP-exam-report-template_whoisflynn_v3.2.md \
 --number-sections \
 --top-level-division=chapter \
 --highlight-style breezedark
+
+chmod a+wxr -R generated-report
