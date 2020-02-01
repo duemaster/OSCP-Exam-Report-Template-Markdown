@@ -6,7 +6,7 @@ OUTFILE_NAME=$2
 
 echo "Using Template: ${TEMPLATE_FILE}"
 
-pandoc ${TEMPLATE_FILE} \
+pandoc /report/${TEMPLATE_FILE} \
 -o generated-report/${OUTFILE_NAME}.pdf \
 --from markdown+yaml_metadata_block+raw_html \
 --template eisvogel \

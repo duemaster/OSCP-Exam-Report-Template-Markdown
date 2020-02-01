@@ -1,5 +1,5 @@
 #! /bin/bash
-DOCKER_IMAGE_NAME="oscp-report-generator"
+DOCKER_IMAGE_NAME="oscp_report_generator"
 TEMPLATE_NAME="OSCP-exam-report-template_whoisflynn_v3.2.md"
 OUTFILE_NAME="MY-REPORT"
 
@@ -9,4 +9,4 @@ OUTFILE_NAME="MY-REPORT"
 echo "Building Docker Image ${DOCKER_IMAGE_NAME}"
 docker build -t $DOCKER_IMAGE_NAME . &> /dev/null
 
-docker run --rm -v $PWD/generated-report:/report-generator/generated-report $DOCKER_IMAGE_NAME $TEMPLATE_NAME $OUTFILE_NAME
+docker run --rm -v $PWD/generated-report:/report-generator/generated-report -v $PWD/report-materials/:/report/ $DOCKER_IMAGE_NAME $TEMPLATE_NAME $OUTFILE_NAME

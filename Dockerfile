@@ -17,12 +17,6 @@ RUN cp Eisvogel/eisvogel.tex /root/.pandoc/templates/eisvogel.latex
 
 WORKDIR /report-generator
 
-# COPY report-materials/OSCP-exam-report-template_whoisflynn_v3.2.md /report-generator/OSCP-exam-report-template_whoisflynn_v3.2.md
-
-COPY report-materials/ /report-generator/
-
-COPY /report-materials/images/ /report-generator/images/
-
 COPY report.sh /report-generator/report.sh
 
 RUN chmod +x report.sh
