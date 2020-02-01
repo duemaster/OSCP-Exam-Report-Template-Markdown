@@ -184,7 +184,7 @@ Server IP Address | Ports Open
 **Exploit Code:**
 
 **Proof Screenshot Here:**
-![ImgPlaceholder](/report-generator/images/placeholder-images-300x225.png)
+![ImgPlaceholder](/report-generator/images/placeholder.png)
 
 **Proof.txt Contents:**
 

@@ -17,14 +17,6 @@ RUN cp Eisvogel/eisvogel.tex /root/.pandoc/templates/eisvogel.latex
 
 WORKDIR /report-generator
 
-
-# Create user
-RUN useradd ${current_user}
-RUN usermod -a -G sudo ${current_user}
-RUN chown ${current_user} -R /report-generator
-
-# USER ${current_user}
-
 # COPY report-materials/OSCP-exam-report-template_whoisflynn_v3.2.md /report-generator/OSCP-exam-report-template_whoisflynn_v3.2.md
 
 COPY report-materials/ /report-generator/
@@ -35,5 +27,7 @@ COPY report.sh /report-generator/report.sh
 
 RUN chmod +x report.sh
 
-ENTRYPOINT [ "bash", "-c" ]
-CMD ["./report.sh"]
+ENTRYPOINT [ "./report.sh"]
+
+# Allow for user provided arguments
+CMD []

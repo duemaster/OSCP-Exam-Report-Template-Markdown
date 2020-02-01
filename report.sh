@@ -1,7 +1,13 @@
-# /bin/bash
+#! /bin/bash
+echo "Creating Report..."
 
-pandoc OSCP-exam-report-template_whoisflynn_v3.2.md \
--o generated-report/OSCP-OS-XXXXX-Lab-Report.pdf \
+TEMPLATE_FILE=$1
+OUTFILE_NAME=$2
+
+echo "Using Template: ${TEMPLATE_FILE}"
+
+pandoc ${TEMPLATE_FILE} \
+-o generated-report/${OUTFILE_NAME}.pdf \
 --from markdown+yaml_metadata_block+raw_html \
 --template eisvogel \
 --table-of-contents \
@@ -11,3 +17,5 @@ pandoc OSCP-exam-report-template_whoisflynn_v3.2.md \
 --highlight-style breezedark
 
 chmod a+wxr -R generated-report
+
+echo "Generated Report ${OUTFILE_NAME}.pdf"
