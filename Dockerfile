@@ -11,9 +11,13 @@ WORKDIR /installer
 RUN wget https://github.com/jgm/pandoc/releases/download/2.9.1.1/pandoc-2.9.1.1-1-amd64.deb && sudo dpkg -i pandoc-2.9.1.1-1-amd64.deb
 # -p to create the intermediate if not exists
 RUN mkdir -p /root/.pandoc/templates/
+
 # Download template
 RUN wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v1.3.1/Eisvogel-1.3.1.zip && unzip -d Eisvogel Eisvogel-1.3.1.zip
 RUN cp Eisvogel/eisvogel.tex /root/.pandoc/templates/eisvogel.latex
+
+# Add in custom templates
+COPY latex-sidepackages/fvextra.sty /root/.pandoc/templates/fvextra.sty
 
 WORKDIR /report-generator
 

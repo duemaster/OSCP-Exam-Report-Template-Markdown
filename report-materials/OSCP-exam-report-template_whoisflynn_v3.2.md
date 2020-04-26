@@ -326,5 +326,12 @@ For the exam, I used my Metasploit/Meterpreter allowance on the following machin
 ## Appendix - Completed Buffer Overflow Code
 
 ```
-code here
+Normal Text
+```
+
+```python
+#!/usr/bin/python
+
+def myMethod():
+    # do something
 ```
